@@ -1,0 +1,6 @@
+services:
+  kickstart:
+    build: .
+    working_dir: /home/russell
+    volumes:
+      - ./:/home/russell/.kickstart

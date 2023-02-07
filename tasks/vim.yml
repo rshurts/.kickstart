@@ -1,0 +1,27 @@
+- name: Install vundle
+  git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
+  tags:
+    - install
+    - vim
+
+- name: Setup .vim directory
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - ~/.vim/backup
+    - ~/.vim/swap
+    - ~/.vim/undo
+  tags:
+    - install
+    - vim
+
+- name: Set viminfo
+  file:
+    path: ~/.vim/viminfo
+    state: touch
+  tags:
+    - install
+    - vim

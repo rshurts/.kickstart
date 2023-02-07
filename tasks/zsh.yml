@@ -1,0 +1,13 @@
+- name: Change shell to zsh
+  shell: chsh -s $(which zsh)
+  tags:
+    - configure
+    - zsh
+
+- name: Install prezto
+  git:
+    repo: https://github.com/sorin-ionescu/prezto.git
+    dest: ~/.zprezto
+  tags:
+    - install
+    - zsh

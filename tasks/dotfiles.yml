@@ -1,0 +1,14 @@
+- name: Clone dotfiles
+  git:
+    repo: https://github.com/rshurts/.dotfiles.git
+    dest: ~/.dotfiles
+  tags:
+    - install
+
+- name: Stow dotfiles
+  shell: cd ~/.dotfiles && stow git zsh vim
+  tags:
+    - configure
+    - git
+    - zsh
+    - vim
