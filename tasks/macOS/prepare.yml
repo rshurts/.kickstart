@@ -1,0 +1,4 @@
+- name: Update homebrew
+  homebrew:
+    update_homebrew: true
+    state: present

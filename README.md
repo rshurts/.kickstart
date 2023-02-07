@@ -29,18 +29,7 @@ Clone the kickstart repo to the home directory and run the playbook.
 
 ```bash
 git clone https://github.com/rshurts/.kickstart.git
-```
-
-**macOS**
-
-```bash
-ansible-playbook ./.kickstart/macOS.yml
-```
-
-**Unbuntu**
-
-```bash
-ansible-playbook ./.kickstart/linux.yml
+ansible-playbook ./.kickstart/local.yml --ask-become-pass
 ```
 
 ## Testing with Docker
@@ -50,4 +39,4 @@ Test additions in a fresh docker ubuntu environment.
 1. `docker compose build`
 1. `docker compose up`
 1. `docker exec -it kickstart-kickstart-1 bash`
-1. In the docker container `ansible-playbook ./.kickstart/linux.yml`
+1. In the docker container `ansible-playbook ./.kickstart/local.yml`

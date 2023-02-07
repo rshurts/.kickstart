@@ -6,7 +6,7 @@
     - install
 
 - name: Stow dotfiles
-  shell: cd ~/.dotfiles && stow git zsh vim
+  shell: cd ~/.dotfiles && stow git zsh vim jetbrains
   tags:
     - configure
     - git

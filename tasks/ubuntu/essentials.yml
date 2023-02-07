@@ -1,0 +1,15 @@
+- name: Install essential linux packages
+  become: true
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - build-essential
+    - curl
+    - wget
+    - stow
+    - git
+    - zsh
+    - vim
+  tags:
+    - install
+    - linux

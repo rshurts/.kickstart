@@ -1,0 +1,10 @@
+- name: Install essential macOS packages
+  homebrew:
+    name: "{{ item }}"
+  with_items:
+    - stow
+    - vim
+    - gnu-tar
+  tags:
+    - install
+    - macOS

@@ -1,0 +1,25 @@
+- name: Download go
+  get_url:
+    url: https://go.dev/dl/go1.20.darwin-amd64.tar.gz
+    dest: ~/go1.20.darwin-amd64.tar.gz
+    checksum: sha256:777025500f62d14bb5a4923072cd97431887961d24de08433a60c2fe1120531d
+  tags:
+   - install
+   - go
+
+- name: Untar go
+  become: true
+  unarchive:
+    src: ~/go1.20.darwin-amd64.tar.gz
+    dest: /usr/local
+  tags:
+    - install
+    - go
+
+- name: Cleanup go download
+  file:
+    path: ~/go1.20.darwin-amd64.tar.gz
+    state: absent
+  tags:
+    - install
+    - go
