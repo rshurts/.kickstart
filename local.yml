@@ -14,14 +14,15 @@
 
 
   tasks:
-  - include_tasks: tasks/ubuntu/essentials.yml
+  - import_tasks: tasks/ubuntu/essentials.yml
     when: ansible_os_family == 'Debian'
-  - include_tasks: tasks/macOS/essentials.yml
+  - import_tasks: tasks/macOS/essentials.yml
     when: ansible_os_family == 'Darwin'
   - import_tasks: tasks/zsh.yml
   - import_tasks: tasks/vim.yml
-  - include_tasks: tasks/ubuntu/go.yml
+  - import_tasks: tasks/ubuntu/go.yml
     when: ansible_os_family == 'Debian'
-  - include_tasks: tasks/macOS/go.yml
+  - import_tasks: tasks/macOS/go.yml
     when: ansible_os_family == 'Darwin'
+  - import_tasks: tasks/node.yml
   - import_tasks: tasks/dotfiles.yml
