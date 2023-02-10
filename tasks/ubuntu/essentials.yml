@@ -8,6 +8,7 @@
     - wget
     - stow
     - git
+    - ripgrep
     - zsh
     - vim
   tags:
