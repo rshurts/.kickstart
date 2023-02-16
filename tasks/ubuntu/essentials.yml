@@ -4,7 +4,6 @@
     name: "{{ item }}"
   with_items:
     - build-essential
-    - make
     - curl
     - wget
     - stow
