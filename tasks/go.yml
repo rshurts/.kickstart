@@ -1,0 +1,34 @@
+- name: Remove old go installations
+  become: true
+  file:
+    path: /usr/local/go
+    state: absent
+  tags:
+    - install
+    - go
+
+- name: Download go
+  get_url:
+    url: https://go.dev/dl/{{ go_archive }}
+    dest: ~/{{ go_archive }}
+    checksum: sha256:{{ go_checksum }}
+  tags:
+   - install
+   - go
+
+- name: Untar go
+  become: true
+  unarchive:
+    src: ~/{{ go_archive }}
+    dest: /usr/local
+  tags:
+    - install
+    - go
+
+- name: Cleanup go download
+  file:
+    path: ~/{{ go_archive }}
+    state: absent
+  tags:
+    - install
+    - go
