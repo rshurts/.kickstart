@@ -9,6 +9,7 @@
     - stow
     - git
     - ripgrep
+    - fd-find
     - zsh
     - vim
   tags:

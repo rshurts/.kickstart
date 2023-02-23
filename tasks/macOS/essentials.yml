@@ -4,6 +4,9 @@
   with_items:
     - stow
     - gnu-tar
+    - wget
+    - ripgrep
+    - fd
     - neovim
     - vim
   tags:
