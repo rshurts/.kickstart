@@ -3,8 +3,9 @@
     name: "{{ item }}"
   with_items:
     - stow
-    - vim
     - gnu-tar
+    - neovim
+    - vim
   tags:
     - install
     - macOS
