@@ -1,7 +1,5 @@
-# This task doesn't seem to work on macOS, just stalls. Seems to work on linux.
-
 - name: Install FNM
-  shell: curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.fnm" --skip-shell
+  shell: curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "~/.fnm" --skip-shell
   tags:
     - install
     - node
@@ -10,8 +8,8 @@
 - name: Install global node
   shell:
     cmd: |
-      eval $(./.fnm/fnm env)
-      ./.fnm/fnm install lts-latest
+      eval $(~/.fnm/fnm env)
+      ~/.fnm/fnm install lts-latest
   tags:
     - install
     - node
