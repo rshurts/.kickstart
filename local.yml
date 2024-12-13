@@ -7,9 +7,9 @@
     - configure
 
   vars:
-    go_version: 1.22.5
+    go_version: 1.23.4
     go_archive: "go{{ go_version }}.{{ 'darwin-amd64' if ansible_os_family == 'Darwin' else 'linux-amd64' if ansible_os_family == 'Debian' }}.tar.gz"
-    go_checksum: "{{ '95d9933cdcf45f211243c42c7705c37353cccd99f27eb4d8e2d1bf2f4165cb50' if ansible_os_family == 'Darwin' else '904b924d435eaea086515bc63235b192ea441bd8c9b198c507e85009e6e4c7f0' if ansible_os_family == 'Debian' }}"
+    go_checksum: "{{ '6700067389a53a1607d30aa8d6e01d198230397029faa0b109e89bc871ab5a0e' if ansible_os_family == 'Darwin' else '6924efde5de86fe277676e929dc9917d466efa02fb934197bc2eba35d5680971' if ansible_os_family == 'Debian' }}"
 
   pre_tasks:
   - import_tasks: tasks/ubuntu/prepare.yml
