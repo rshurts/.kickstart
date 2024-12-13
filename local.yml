@@ -26,6 +26,7 @@
   - import_tasks: tasks/zsh.yml
   - import_tasks: tasks/vim.yml
   - import_tasks: tasks/go.yml
+  - import_tasks: tasks/volta.yml
   - import_tasks: tasks/deno.yml
   - import_tasks: tasks/bun.yml
   - import_tasks: tasks/dotfiles.yml
