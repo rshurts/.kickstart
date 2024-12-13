@@ -1,3 +1,5 @@
+# This task doesn't seem to work on macOS, just stalls. Seems to work on linux.
+
 - name: Install FNM
   shell: curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.fnm" --skip-shell
   tags:
