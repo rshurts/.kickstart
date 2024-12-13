@@ -1,0 +1,13 @@
+- name: Install Volta
+  shell: curl https://get.volta.sh | bash
+  tags:
+    - install
+    - node
+    - volta
+
+- name: Install global node
+  shell: ~/.volta/bin/volta install node
+  tags:
+    - install
+    - node
+    - volta

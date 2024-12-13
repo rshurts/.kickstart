@@ -1,0 +1,16 @@
+- name: Install FNM
+  shell: curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.fnm" --skip-shell
+  tags:
+    - install
+    - node
+    - fnm
+
+- name: Install global node
+  shell:
+    cmd: |
+      eval $(./.fnm/fnm env)
+      ./.fnm/fnm install lts-latest
+  tags:
+    - install
+    - node
+    - fnm
