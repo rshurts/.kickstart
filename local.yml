@@ -17,6 +17,7 @@
       when: ansible_os_family == 'Debian'
     - import_tasks: tasks/macOS/essentials.yml
       when: ansible_os_family == 'Darwin'
+    - import_tasks: tasks/directory.yml
     - import_tasks: tasks/zsh.yml
     - import_tasks: tasks/bun.yml
     - import_tasks: tasks/mise.yml
