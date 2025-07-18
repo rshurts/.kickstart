@@ -6,11 +6,6 @@
     - install
     - configure
 
-  vars:
-    go_version: 1.24.1
-    go_archive: "go{{ go_version }}.{{ 'darwin-amd64' if ansible_os_family == 'Darwin' else 'linux-amd64' if ansible_os_family == 'Debian' }}.tar.gz"
-    go_checksum: "{{ 'addbfce2056744962e2d7436313ab93486660cf7a2e066d171b9d6f2da7c7abe' if ansible_os_family == 'Darwin' else 'cb2396bae64183cdccf81a9a6df0aea3bce9511fc21469fb89a0c00470088073' if ansible_os_family == 'Debian' }}"
-
   pre_tasks:
     - import_tasks: tasks/ubuntu/prepare.yml
       when: ansible_os_family == 'Debian'
@@ -23,7 +18,6 @@
     - import_tasks: tasks/macOS/essentials.yml
       when: ansible_os_family == 'Darwin'
     - import_tasks: tasks/zsh.yml
-    - import_tasks: tasks/go.yml
-    - import_tasks: tasks/volta.yml
     - import_tasks: tasks/bun.yml
+    - import_tasks: tasks/mise.yml
     - import_tasks: tasks/dotfiles.yml

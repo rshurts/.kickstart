@@ -1,0 +1,26 @@
+- name: Install mise
+  shell: curl https://mise.run | sh
+  tags:
+    - install
+    - mise
+    - node
+    - go
+
+- name: Install mise completions
+  shell: ~/.local/bin/mise use --global usage
+  tags:
+    - install
+    - mise
+
+- name: Install global node
+  shell: ~/.local/bin/mise use --global node@lts
+  tags:
+    - install
+    - node
+
+
+- name: Install global go
+  shell: ~/.local/bin/mise use --global go
+  tags:
+    - install
+    - go
