@@ -20,5 +20,6 @@
     - import_tasks: tasks/directory.yml
     - import_tasks: tasks/zsh.yml
     - import_tasks: tasks/bun.yml
+    - import_tasks: tasks/rust.yml
     - import_tasks: tasks/mise.yml
     - import_tasks: tasks/dotfiles.yml
